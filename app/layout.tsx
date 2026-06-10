@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Bernand Trianda Firmansyah | Portfolio",
-  description: "Computer Science Graduate | Data Analyst | IT Support",
+  title: "Bernand Trianda Firmansyah",
+  description:
+    "Computer Science Graduate | Data Analytics | Business Operations",
 };
 
 export default function RootLayout({

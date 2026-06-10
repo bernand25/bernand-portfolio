@@ -48,14 +48,16 @@ export default function Home() {
       </h1>
 
       <h2 className="text-2xl text-gray-600 mt-4">
-        Computer Science Graduate | Data Analyst | IT Support
+        Computer Science Graduate | Data Analyst | Business Operations
       </h2>
 
-      <p className="mt-6 max-w-3xl text-lg text-gray-700">
-        Passionate about Data, Technology, and Digital Innovation.
-        Experienced in dashboard development, IT support, and
-        digital campaigns through internships and ambassador programs.
-      </p>
+      <p className="mt-6 max-w-3xl text-lg text-gray-400 leading-8">
+  Computer Science graduate from BINUS University with experience in
+  data analytics, workforce reporting, business operations, and
+  stakeholder collaboration. Passionate about leveraging data-driven
+  insights and technology solutions to improve operational efficiency
+  and support strategic decision-making.
+</p>
 
       <div className="flex gap-4 mt-8">
 
