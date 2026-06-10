@@ -6,9 +6,21 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800 py-5">
   <div className="flex justify-between items-center">
 
-    <a href="#" className="text-xl font-bold">
-  Bernand
-    </a>
+    <a href="#" className="flex items-center gap-3">
+
+  <Image
+    src="/btf-logo.png"
+    alt="BTF Logo"
+    width={38}
+    height={38}
+    className="rounded-full"
+  />
+
+  <span className="font-bold text-xl">
+    Bernand
+  </span>
+
+</a>
 
     <div className="flex gap-6">
       <a href="#about" className="hover:text-gray-400">
@@ -1067,7 +1079,13 @@ export default function Home() {
 
 </section>
 <footer className="border-t border-gray-800 py-10 mt-20">
-
+<Image
+  src="/btf-logo.png"
+  alt="BTF Logo"
+  width={60}
+  height={60}
+  className="mx-auto mb-4"
+/>
   <div className="text-center text-gray-500">
 
     <p>
