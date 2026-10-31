@@ -8,6 +8,10 @@ import Reveal from "./Reveal";
 function ProjectModal({ project, onClose }) {
   const dialogRef = useRef(null);
   const closeRef = useRef(null);
+  const images = project.images || [];
+  const [shot, setShot] = useState(null);
+  const shotRef = useRef(null);
+  shotRef.current = shot;
 
   useEffect(() => {
     const prevOverflow = document.body.style.overflow;
@@ -15,6 +19,15 @@ function ProjectModal({ project, onClose }) {
     closeRef.current && closeRef.current.focus();
 
     const onKey = (e) => {
+      if (shotRef.current !== null) {
+        if (e.key === "Escape") {
+          e.stopPropagation();
+          setShot(null);
+          return;
+        }
+        if (e.key === "ArrowRight") setShot((i) => (i + 1) % images.length);
+        if (e.key === "ArrowLeft") setShot((i) => (i - 1 + images.length) % images.length);
+      }
       if (e.key === "Escape") {
         e.stopPropagation();
         onClose();
@@ -38,7 +51,7 @@ function ProjectModal({ project, onClose }) {
       document.body.style.overflow = prevOverflow;
       document.removeEventListener("keydown", onKey);
     };
-  }, [onClose]);
+  }, [onClose, images.length]);
 
   return (
     <div className="modal-backdrop" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
@@ -49,6 +62,26 @@ function ProjectModal({ project, onClose }) {
         <span className="project-org">{project.org}</span>
         <h2 id="modal-title">{project.title}</h2>
         <p style={{ color: "var(--muted)", fontSize: 17 }}>{project.summary}</p>
+
+        {images.length > 0 && (
+          <div className="modal-section">
+            <h3>Screenshots</h3>
+            <div className="shots">
+              {images.map((img, i) => (
+                <button
+                  type="button"
+                  key={img.src}
+                  className="shot"
+                  onClick={() => setShot(i)}
+                  aria-label={`Open screenshot ${i + 1} of ${images.length}: ${img.alt}`}
+                >
+                  <img src={img.src} alt="" loading="lazy" />
+                  {img.caption && <span className="shot-caption">{img.caption}</span>}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {project.problem && (
           <div className="modal-section">
@@ -106,6 +139,49 @@ function ProjectModal({ project, onClose }) {
             ))}
           </div>
         </div>
+        {shot !== null && images[shot] && (
+          <div
+            className="lightbox"
+            role="group"
+            aria-label={`Screenshot ${shot + 1} of ${images.length}`}
+            onMouseDown={(e) => e.target === e.currentTarget && setShot(null)}
+          >
+            <figure className="lightbox-figure">
+              <img src={images[shot].src} alt={images[shot].alt} />
+              <figcaption>
+                <span>{images[shot].caption || images[shot].alt}</span>
+                <span className="mono">
+                  {shot + 1} / {images.length}
+                </span>
+              </figcaption>
+            </figure>
+            <div className="lightbox-controls">
+              {images.length > 1 && (
+                <button
+                  type="button"
+                  className="icon-btn"
+                  aria-label="Previous screenshot"
+                  onClick={() => setShot((i) => (i - 1 + images.length) % images.length)}
+                >
+                  <ArrowRight style={{ transform: "rotate(180deg)" }} />
+                </button>
+              )}
+              <button type="button" className="icon-btn" aria-label="Close screenshot" onClick={() => setShot(null)} autoFocus>
+                <Close />
+              </button>
+              {images.length > 1 && (
+                <button
+                  type="button"
+                  className="icon-btn"
+                  aria-label="Next screenshot"
+                  onClick={() => setShot((i) => (i + 1) % images.length)}
+                >
+                  <ArrowRight />
+                </button>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -177,6 +253,14 @@ export default function Projects() {
               }}
               aria-haspopup="dialog"
             >
+              {p.images && p.images.length > 0 && (
+                <span className="card-thumb">
+                  <img src={p.images[0].src} alt="" loading="lazy" />
+                  <span className="thumb-count">
+                    {p.images.length} {p.images.length === 1 ? "screenshot" : "screenshots"}
+                  </span>
+                </span>
+              )}
               <span className="card-top">
                 <span className="project-org">{p.org}</span>
                 {p.featured && <span className="badge">Citilink</span>}

@@ -55,6 +55,13 @@ export const about = {
 };
 
 // category: "work" | "research" | "web"
+//
+// Bukti/screenshot proyek: taruh gambar di public/projects/<id>/ lalu isi `images`, contoh:
+//   images: [
+//     { src: "/projects/review-portal/dashboard.png", alt: "Dashboard kajian per direktorat", caption: "Dashboard utama (data dummy)" },
+//   ],
+// Gambar pertama dipakai sebagai thumbnail di kartu proyek.
+// Untuk proyek Citilink, pakai data dummy atau blur data asli sebelum diunggah.
 export const projectFilters = [
   { id: "all", label: "All" },
   { id: "work", label: "Citilink" },
@@ -82,6 +89,7 @@ export const projects = [
       "Dashboards should read the source data, never a hand-made summary. Halfway through, I found pivot tables that had not been refreshed and no longer matched the raw data.",
     flow: ["Excel register in SharePoint", "Scheduled sync", "Google Sheets (raw data)", "Apps Script web dashboard"],
     stack: ["Google Apps Script", "Google Sheets", "SharePoint", "Power Automate", "JavaScript"],
+    images: [],
   },
   {
     id: "mitigation-tracker",
@@ -101,6 +109,7 @@ export const projects = [
     lesson: "A good dashboard answers one question first: what needs follow-up today?",
     flow: ["Risk register", "Monthly monitoring input", "Mitigation tracking", "Power BI dashboard"],
     stack: ["Laravel", "PHP", "MySQL", "JavaScript", "Power BI", "DAX"],
+    images: [],
   },
   {
     id: "compliance-tracker",
@@ -120,6 +129,7 @@ export const projects = [
     lesson: "A checklist is only useful when its status is visible without asking anyone.",
     flow: ["Compliance checklist", "Periodic status update", "Consolidated data", "Fulfillment dashboard"],
     stack: ["Laravel", "PHP", "MySQL", "Power BI", "DAX"],
+    images: [],
   },
   {
     id: "email-autofiling",
@@ -139,6 +149,7 @@ export const projects = [
     lesson: "Start automating the most boring, most repeated task. That is where the impact shows fastest.",
     flow: ["Outlook inbox", "Automated flow", "SharePoint library"],
     stack: ["Power Automate", "Outlook", "SharePoint", "Microsoft 365"],
+    images: [],
   },
   {
     id: "crypto-sentiment",
@@ -156,6 +167,7 @@ export const projects = [
       "Led the research from planning to defense (thesis grade: A)",
     ],
     stack: ["Python", "NLP", "Sentiment Analysis", "ARIMA / SARIMA", "Streamlit"],
+    images: [],
   },
   {
     id: "enrollment-prediction",
@@ -170,6 +182,7 @@ export const projects = [
       "Data preprocessing, exploratory data analysis, and visualization to support education planning",
     ],
     stack: ["Python", "Regression", "Clustering", "EDA", "Data Visualization"],
+    images: [],
   },
   {
     id: "uiux-review",
@@ -184,6 +197,7 @@ export const projects = [
       "Wrote recommendations for tourism information services",
     ],
     stack: ["PRISMA", "UI/UX Research", "Literature Review"],
+    images: [],
   },
   {
     id: "piscis-aquarium",
@@ -193,6 +207,7 @@ export const projects = [
     summary: "A marine-life themed website with responsive navigation and a booking flow.",
     built: ["Responsive layout and navigation", "Interactive booking section", "Built with plain HTML, CSS, and JavaScript"],
     stack: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    images: [],
   },
 ];
 
