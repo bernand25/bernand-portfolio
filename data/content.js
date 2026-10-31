@@ -81,6 +81,9 @@ export const projects = [
     problem:
       "Business and risk reviews were registered in a shared Excel workbook. Seeing how many reviews came in, from which directorate, and which were still in progress meant opening the file, filtering, and counting by hand.",
     built: [
+      "A staged review workflow (WR review, requester review, latest review, final draft, completed) with registration numbers issued automatically",
+      "Business reviews captured from e-mail and Excel import, so requesters only complete what is missing",
+      "Role-based access for requesters, WR reviewers, and administrators, with a personal task home and notifications",
       "Automated sync from the Excel register in SharePoint to Google Sheets, refreshing every few minutes",
       "A web dashboard built with Google Apps Script that shows reviews by year, month, directorate, initiative type, and status",
       "Every metric recalculated from raw data instead of manually refreshed pivot tables, so the numbers stay consistent",
@@ -89,7 +92,10 @@ export const projects = [
       "Dashboards should read the source data, never a hand-made summary. Halfway through, I found pivot tables that had not been refreshed and no longer matched the raw data.",
     flow: ["Excel register in SharePoint", "Scheduled sync", "Google Sheets (raw data)", "Apps Script web dashboard"],
     stack: ["Google Apps Script", "Google Sheets", "SharePoint", "Power Automate", "JavaScript"],
-    images: [],
+    images: [
+      { src: "/projects/review-portal/landing.webp", alt: "Landing page of the Business and Risk Review portal with a sign-in form", caption: "Landing page: submit business reviews, revise with the WR team, and track every stage" },
+      { src: "/projects/review-portal/task-home.webp", alt: "Task home showing review counts per stage and business reviews received by e-mail", caption: "Task home: reviews waiting at each stage, plus reviews captured from e-mail" },
+    ],
   },
   {
     id: "mitigation-tracker",
@@ -104,12 +110,17 @@ export const projects = [
     built: [
       "Web modules for the risk register, monthly monitoring, mitigation tracking, and reporting periods",
       "Filtering and data workflows so each unit sees and updates only what it owns",
+      "A monthly monitoring dashboard with KPIs, management flags, effectiveness, trend, and implementation status per reporting period",
+      "E-mail + PIN sign-in with role-based access, a view-only guest mode, executive reports, and CSV export",
       "Power BI dashboards with DAX measures and KPIs that show mitigation progress at a glance",
     ],
     lesson: "A good dashboard answers one question first: what needs follow-up today?",
     flow: ["Risk register", "Monthly monitoring input", "Mitigation tracking", "Power BI dashboard"],
     stack: ["Laravel", "PHP", "MySQL", "JavaScript", "Power BI", "DAX"],
-    images: [],
+    images: [
+      { src: "/projects/mitigation-tracker/dashboard.webp", alt: "Risk monitoring dashboard with KPI cards, management flags, and implementation status", caption: "Risk monitoring dashboard: risk events, mitigation progress, and management flags per period" },
+      { src: "/projects/mitigation-tracker/sign-in.webp", alt: "Sign-in page of the Risk Mitigation Monitoring platform", caption: "Sign-in page with e-mail + PIN login and a view-only guest mode" },
+    ],
   },
   {
     id: "compliance-tracker",
@@ -122,14 +133,17 @@ export const projects = [
     problem:
       "Knowing which compliance items were met meant collecting checklists and consolidating them by hand, which was slow exactly when answers were needed quickly.",
     built: [
-      "Checklist tracking per reporting period, with filters by monitoring scope",
+      "Checklist tracking per reporting period, with filters for period, compliance type, status, reference, category, and PIC",
+      "Breakdowns by compliance type (SHL vs Capital Injection), status, and PIC, plus a monthly history",
       "A clear view of fulfilled versus outstanding items for management reporting",
       "Structured data shared with the risk modules for consistent reporting",
     ],
     lesson: "A checklist is only useful when its status is visible without asking anyone.",
     flow: ["Compliance checklist", "Periodic status update", "Consolidated data", "Fulfillment dashboard"],
     stack: ["Laravel", "PHP", "MySQL", "Power BI", "DAX"],
-    images: [],
+    images: [
+      { src: "/projects/compliance-tracker/dashboard.webp", alt: "Compliance checklist dashboard with filters, status cards, and breakdown charts", caption: "Compliance dashboard: fulfilled, partially fulfilled, and outstanding items with breakdowns" },
+    ],
   },
   {
     id: "email-autofiling",
