@@ -1,4 +1,5 @@
 import { profile } from "@/data/content";
+import LocalTime from "./LocalTime";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -11,7 +12,7 @@ export default function Footer() {
         <span>
           {profile.role} · {profile.unit} · {profile.company}
         </span>
-        <a href="#top">Back to top ↑</a>
+        <LocalTime />
       </div>
     </footer>
   );

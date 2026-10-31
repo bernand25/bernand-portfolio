@@ -1,12 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { experience, leadership } from "@/data/content";
 import { ChevronDown } from "./Icons";
 import Reveal from "./Reveal";
 
 export default function Experience() {
   const [open, setOpen] = useState(() => new Set([0]));
+  const listRef = useRef(null);
+
+  // Fill the timeline line as the reader scrolls through it.
+  useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const r = el.getBoundingClientRect();
+      const mid = window.innerHeight * 0.6;
+      const p = Math.min(1, Math.max(0, (mid - r.top) / r.height));
+      el.style.setProperty("--tl-progress", p.toFixed(3));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   const toggle = (i) =>
     setOpen((prev) => {
@@ -26,7 +46,7 @@ export default function Experience() {
         </Reveal>
 
         <div className="exp-layout">
-          <ol className="timeline">
+          <ol className="timeline" ref={listRef}>
             {experience.map((job, i) => {
               const isOpen = open.has(i);
               const panelId = `exp-panel-${i}`;

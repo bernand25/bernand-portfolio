@@ -1,4 +1,7 @@
 import About from "./About";
+import BackToTop from "./BackToTop";
+import Impact from "./Impact";
+import TechMarquee from "./TechMarquee";
 import CommandPalette from "./CommandPalette";
 import Contact from "./Contact";
 import Credentials from "./Credentials";
@@ -19,7 +22,9 @@ export default function Site() {
       <Navbar />
       <main id="main">
         <Hero />
+        <TechMarquee />
         <About />
+        <Impact />
         <Projects />
         <Experience />
         <Skills />
@@ -28,6 +33,7 @@ export default function Site() {
       </main>
       <Footer />
       <CommandPalette />
+      <BackToTop />
     </>
   );
 }

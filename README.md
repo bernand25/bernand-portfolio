@@ -30,6 +30,11 @@ Yang perlu dicek sebelum deploy:
 
 ## Fitur
 
+- Animasi masuk di hero (judul muncul per kata), spotlight yang mengikuti kursor, kartu monitoring yang miring sedikit saat disorot
+- Pita tools yang berjalan, pita angka "By the numbers" yang menghitung saat terlihat
+- Kartu proyek unggulan yang lebar, efek cahaya di tepi kartu saat disorot
+- Garis timeline pengalaman yang terisi saat di-scroll, tombol kembali ke atas dengan indikator progres, jam WIB di footer
+
 - Tema gelap/terang (tersimpan di browser)
 - Quick jump: tekan `Ctrl + K` / `Cmd + K` untuk lompat ke bagian, membuka proyek, atau menyalin email
 - Filter proyek dan detail proyek dalam modal (masalah, alur kerja, yang dibangun, pelajaran, stack)

@@ -37,6 +37,14 @@ export const scope = {
   ],
 };
 
+// Angka di pita "By the numbers" (dihitung beranimasi saat terlihat).
+export const impact = [
+  { value: 4, label: "Systems built for Enterprise Risk Management" },
+  { value: 18, label: "Risk events monitored" },
+  { value: 54, label: "Compliance checklist items tracked" },
+  { value: 2, label: "International conference presentations" },
+];
+
 export const about = {
   paragraphs: [
     "I'm a System Development professional in the Enterprise Risk Management unit at Citilink Indonesia. My work sits where software, business process, and data meet: I talk to the people who run the process, translate what they need into requirements, and then build the system myself.",

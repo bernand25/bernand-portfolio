@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { projectFilters, projects } from "@/data/content";
 import { ArrowRight, Check, Close } from "./Icons";
 import Reveal from "./Reveal";
+import { trackPointer } from "./fx";
 
 function ProjectModal({ project, onClose }) {
   const dialogRef = useRef(null);
@@ -245,7 +246,8 @@ export default function Projects() {
             <button
               type="button"
               key={`${filter}-${p.id}`}
-              className="card project-card"
+              className={`card project-card glow-card ${i === 0 && p.featured && p.images && p.images.length ? "is-wide" : ""}`}
+              onPointerMove={trackPointer}
               style={{ animationDelay: `${i * 60}ms` }}
               onClick={(e) => {
                 lastTrigger.current = e.currentTarget;
