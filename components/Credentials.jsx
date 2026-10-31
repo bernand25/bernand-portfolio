@@ -20,12 +20,14 @@ export default function Credentials() {
             <div className="edu-row">
               <span>{education.degree}</span>
               <span aria-hidden="true">·</span>
+              <span>{education.period}</span>
+              <span aria-hidden="true">·</span>
               <span>
                 GPA <span className="gpa">{education.gpa}</span>
               </span>
             </div>
             <div className="thesis">
-              <strong>Thesis</strong>
+              <strong>Thesis · Grade {education.thesisGrade}</strong>
               {education.thesis}
             </div>
             <ul className="activity-list">

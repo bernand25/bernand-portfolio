@@ -40,7 +40,7 @@ export const scope = {
 export const about = {
   paragraphs: [
     "I'm a System Development professional in the Enterprise Risk Management unit at Citilink Indonesia. My work sits where software, business process, and data meet: I talk to the people who run the process, translate what they need into requirements, and then build the system myself.",
-    "Before Citilink, I graduated in Computer Science from BINUS University, built HR reporting dashboards as an IT Support intern at TÜV NORD Indonesia, and led research on social media sentiment and cryptocurrency prices.",
+    "Before Citilink, I graduated in Computer Science from BINUS University, built HR dashboards as an IT intern for the HR information system at TÜV NORD Indonesia, and led research on social media sentiment and cryptocurrency prices.",
   ],
   approach: [
     { step: "01", title: "Understand the process", text: "Map how the work actually flows today, who touches it, and what decisions depend on it." },
@@ -146,15 +146,30 @@ export const projects = [
     title: "Cryptocurrency Sentiment Analysis",
     org: "Undergraduate thesis · BINUS University",
     summary:
-      "Research on how public sentiment on social media relates to cryptocurrency price movements.",
+      "Research on how public sentiment on social media relates to Bitcoin price movements, with a forecasting dashboard.",
     problem:
       "Mining Social Media for Financial Insights: The Impact of Public Sentiment on Cryptocurrency Price Movement.",
     built: [
       "Collected and preprocessed social media text data",
       "Applied sentiment analysis and compared it with price movement",
-      "Visualized the findings and led the research from planning to defense",
+      "Built an interactive forecasting dashboard with ARIMA/SARIMA models in Streamlit",
+      "Led the research from planning to defense (thesis grade: A)",
     ],
-    stack: ["Python", "NLP", "Machine Learning", "Sentiment Analysis"],
+    stack: ["Python", "NLP", "Sentiment Analysis", "ARIMA / SARIMA", "Streamlit"],
+  },
+  {
+    id: "enrollment-prediction",
+    category: "research",
+    title: "Student Enrollment Interest Prediction",
+    org: "Academic project",
+    summary:
+      "A predictive model that forecasts student enrollment trends and finds regional study program interest patterns across Indonesian provinces.",
+    built: [
+      "Regression analysis to forecast enrollment trends",
+      "Clustering to group provinces by study program interest",
+      "Data preprocessing, exploratory data analysis, and visualization to support education planning",
+    ],
+    stack: ["Python", "Regression", "Clustering", "EDA", "Data Visualization"],
   },
   {
     id: "uiux-review",
@@ -196,12 +211,13 @@ export const experience = [
   },
   {
     company: "PT TÜV NORD Indonesia",
-    role: "IT Support Intern",
-    period: "2024 – 2025",
+    role: "IT Intern · Human Resources Information System",
+    period: "Sep 2024 – Oct 2025",
     points: [
-      "Built HR reporting and monitoring dashboards.",
-      "Maintained employee data and supported HR operations.",
-      "Provided technical troubleshooting for staff.",
+      "Developed interactive HR dashboards in Looker Studio with data from Google Sheets, giving real-time visibility of key HR metrics.",
+      "Validated, cleansed, and maintained HR data in Excel for accurate and consistent reporting.",
+      "Worked with HR users to turn reporting needs into dashboard and system improvements, and investigated data inconsistencies.",
+      "Provided IT support and troubleshooting, and prepared system documentation and user guides.",
     ],
   },
   {
@@ -224,6 +240,12 @@ export const leadership = [
     text: "Led the team from planning to presentation and presented the findings internationally.",
   },
   {
+    title: "Conference Presenter",
+    org: "SIET 2023 International Conference",
+    period: "2023",
+    text: "Presented research at an international conference.",
+  },
+  {
     title: "Research Project Leader",
     org: "Undergraduate Thesis, BINUS University",
     period: "2024 – 2025",
@@ -233,7 +255,7 @@ export const leadership = [
 
 export const skillGroups = [
   { id: "dev", label: "Full-Stack", items: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML", "CSS", "Next.js", "React", "Tailwind CSS"] },
-  { id: "data", label: "Data & BI", items: ["Power BI", "DAX", "Data Modeling", "KPI Design", "SQL", "Python", "Excel", "Google Sheets"] },
+  { id: "data", label: "Data & BI", items: ["Power BI", "DAX", "Data Modeling", "KPI Design", "Looker Studio", "SQL", "Python", "Excel", "Google Sheets"] },
   { id: "auto", label: "Automation", items: ["Google Apps Script", "Power Automate", "SharePoint", "Microsoft 365"] },
   { id: "ba", label: "Business Analysis", items: ["Requirements Gathering", "Workflow Mapping", "Functional Requirements", "Stakeholder Communication"] },
   { id: "ai", label: "AI & ML", items: ["Machine Learning", "NLP", "Sentiment Analysis", "XGBoost"] },
@@ -243,16 +265,18 @@ export const skillGroups = [
 export const education = {
   school: "BINUS University",
   degree: "Bachelor of Computer Science",
+  period: "2021 – 2025",
   gpa: "3.62 / 4.00",
+  thesisGrade: "A",
   thesis: "Mining Social Media for Financial Insights: The Impact of Public Sentiment on Cryptocurrency Price Movement",
   activities: ["HIMTI BINUS University · Student Activist", "BINUS Student Learning Community · Mentee", "Tech For Indonesia · Volunteer"],
 };
 
 export const certifications = [
-  { title: "Google Data Analytics Professional Certificate", issuer: "Google", area: "Data Analytics", file: "/cert-google.jpg" },
+  { title: "Google Data Analytics Professional Certificate", issuer: "Google · Coursera", area: "Data Analytics", file: "/cert-google.jpg" },
   { title: "Software Engineer Certificate", issuer: "HackerRank", area: "Software Engineering", file: "/cert-hackerrank.jpg" },
   { title: "CompTIA A+ 1000 Part 2", issuer: "CompTIA", area: "IT Infrastructure", file: "/cert-comptia.jpg" },
-  { title: "Data Science & Artificial Intelligence", issuer: "", area: "AI & Machine Learning", file: "/cert-datascience.jpg" },
+  { title: "Data Science & Artificial Intelligence", issuer: "BINUS University", area: "AI & Machine Learning", file: "/cert-datascience.jpg" },
   { title: "TOEFL ITP · Score 530", issuer: "ETS", area: "English Proficiency", file: "/cert-toefl.jpg" },
 ];
 
