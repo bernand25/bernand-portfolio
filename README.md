@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bernand Trianda Firmansyah · Portfolio v2
 
-## Getting Started
+Next.js 16 (App Router) portfolio, tanpa library UI tambahan. Semua isi ada di `data/content.js`.
 
-First, run the development server:
+## 1. Jalankan di komputer
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 2. Deploy ke Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Push branch `portfolio-v2` ke GitHub untuk mendapat link preview dari Vercel, lalu merge ke `main` untuk menayangkannya.
 
-## Learn More
+## Mengubah isi
 
-To learn more about Next.js, take a look at the following resources:
+- Teks, proyek, pengalaman, skill, sertifikat: `data/content.js`
+- Warna dan tampilan: bagian *Design tokens* di `app/globals.css`
+- Judul halaman dan deskripsi untuk Google/LinkedIn: `metadata` di `app/layout.tsx`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Yang perlu dicek sebelum deploy:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] Ganti `public/Bernand_CV.pdf` dengan CV terbaru
+- [ ] Link GitHub di `profile.github` (sekarang `github.com/bernand25`)
+- [ ] Periode di Citilink (`period` di `experience`, sekarang tertulis "2025 – Present")
+- [ ] Stack tiap proyek Citilink sudah sesuai yang dipakai
+- [ ] Tidak ada data internal perusahaan yang ikut tampil
 
-## Deploy on Vercel
+## Fitur
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Tema gelap/terang (tersimpan di browser)
+- Quick jump: tekan `Ctrl + K` / `Cmd + K` untuk lompat ke bagian, membuka proyek, atau menyalin email
+- Filter proyek dan detail proyek dalam modal (masalah, alur kerja, yang dibangun, pelajaran, stack)
+- Angka monitoring yang beranimasi di hero
+- Navbar yang menandai bagian aktif, progress bar saat scroll, animasi muncul saat scroll
+- Timeline pengalaman yang bisa dibuka-tutup, tab skill yang bisa dipakai dengan keyboard
+- Tombol salin email
+- Responsif untuk HP; menghormati pengaturan "reduce motion"
