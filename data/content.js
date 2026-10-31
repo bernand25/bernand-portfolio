@@ -14,7 +14,7 @@ export const profile = {
   intro:
     "I combine full-stack development, business analysis, and data analytics to turn manual, spreadsheet-driven monitoring into structured systems and dashboards that management can rely on.",
   rotatingRoles: ["Full-Stack Developer", "Business Analyst", "BI Developer", "Automation Builder"],
-  location: "Jakarta, Indonesia",
+  location: "Tangerang, Indonesia",
   email: "bernand.fir@gmail.com",
   phone: "+62 813-3076-0966",
   linkedin: "https://linkedin.com/in/bernandtf",
@@ -48,7 +48,7 @@ export const about = {
     { step: "03", title: "Build with what fits", text: "Automate that part with tools the organization can maintain: Laravel, Power BI, Microsoft 365, or Apps Script." },
   ],
   facts: [
-    { label: "Based in", value: "Jakarta, Indonesia" },
+    { label: "Based in", value: "Tangerang, Indonesia" },
     { label: "Education", value: "B.Sc. Computer Science, BINUS · GPA 3.62" },
     { label: "Focus", value: "Risk & compliance systems" },
   ],
