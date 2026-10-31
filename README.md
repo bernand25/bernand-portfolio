@@ -25,7 +25,6 @@ Yang perlu dicek sebelum deploy:
 
 - [ ] Ganti `public/Bernand_CV.pdf` dengan CV terbaru
 - [ ] Link GitHub di `profile.github` (sekarang `github.com/bernand25`)
-- [ ] Periode di Citilink (`period` di `experience`, sekarang tertulis "2025 – Present")
 - [ ] Stack tiap proyek Citilink sudah sesuai yang dipakai
 - [ ] Tidak ada data internal perusahaan yang ikut tampil
 

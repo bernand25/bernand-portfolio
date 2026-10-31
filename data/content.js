@@ -200,7 +200,7 @@ export const experience = [
   {
     company: "PT Citilink Indonesia",
     role: "System Development · Enterprise Risk Management",
-    period: "2025 – Present", // TODO: sesuaikan bulan dan tahun mulai
+    period: "Sep 2026 – Present",
     current: true,
     points: [
       "Develop and enhance web-based monitoring systems with Laravel, PHP, MySQL, and JavaScript, covering risk registers, monthly monitoring, mitigation tracking, reporting periods, filtering, and data workflows.",
